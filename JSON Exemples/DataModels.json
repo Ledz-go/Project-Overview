@@ -51,7 +51,7 @@
                   "Duration": 3000, //the duration as a Long in miliSeconds
                   "Channels": [ 0, 0, 255, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
                 },
-               ]
+              ]
             },
             {
               "NodeId": 452, //The id in Integer of the DMX light to change
@@ -64,7 +64,7 @@
                   "Duration": 3000, //the duration as a Long in miliSeconds
                   "Channels": [ 0, 0, 255, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
                 },
-               ]
+              ]
             }
           ]
         }
