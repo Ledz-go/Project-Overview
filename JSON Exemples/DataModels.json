@@ -2,58 +2,85 @@
 
 //The System is defined as follows
 {
-  "Version": 1.3, // the system version for verification
+  "Version": 1.3 // the system version for verification
 }
 
-//The Session is defined as follows
+//The Session is defined as follows in the Application
 {
   "SessionId": 1564, //The ID of the session
-  "Fixtures": [
+  "Nodes": [
     {
-      "FixtureId": 4528,  //The Id of the fixture
+      "NodeId": 4528,  //The Id of the node
       "Model": "Starvill PAR56 RGB", //The name of the model that should corresponf to a model in the library
-      "Channels": ["R","G","B","F"], //The name of each channel in order, and the good amount of channels
-      "Connection State": true, //L'etat de connection TCP
-      "Socket": sckt // The socket object for the connection
+      "categories": ["Moving Head", "Color Changer"] //The categories of the node
     },
     {
       "FixtureId": 4559,  //The Id of the fixture
       "Model": "MHx 60", //The name of the model that should corresponf to a model in the library
-      "Channels": ["R","G","B","Tilt","Gobo"], //The name of each channel in order, and the good amount of channels
-      "Connection State": true,
-      "Socket": sckt
-    }
-   ]
-}
-
-//An Environment is defined as follows
-{
+      "categories": ["Moving Head", "Color Changer"] //The categories of the node
   
-  "Data": {
-    "Type": "Environment Creation", // Must be "Function", "Command", "Function Creation", "Terminate", "Environment Creation" or "Fixture Creation"
-    "Name": "Salle de Concert", //Name of the new environment
-    "Fixtures": [
-      {
-        "FixtureId": 4632, //The id in Integer of the fixture
-        "x": 48, //The x axis position of the fixture in the plan
-        "y": -65 //The y axis position of the fixture in the plan
-      },
-      {
-        "FixtureId": 452, //The id in Integer of the fixture
-        "x": 2, //The x axis position of the fixture in the plan
-        "y": -32 //The y axis position of the fixture in the plan
-      }
-    ]
-  }
+    }
+  ],
+  "Environments": [
+    {
+      "Name": "Salle de Concert", //Name of the new environment
+      "Nodes": [
+        {
+          "NodeId": 4632, //The id in Integer of the fixture
+          "x": 48, //The x axis position of the fixture in the plan
+          "y": -65 //The y axis position of the fixture in the plan
+        },
+        {
+          "NodeId": 452, //The id in Integer of the fixture
+          "x": 2, //The x axis position of the fixture in the plan
+          "y": -32 //The y axis position of the fixture in the plan
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "New Function 2", //Name of the new function
+          "Nodes": [
+            {
+              "NodeId": 4268, //The id in Integer of the DMX light to change
+              "Command": [ //The list of commands to follow, in order
+                {
+                  "Duration": 2156.168, //the duration as a Long in miliSeconds
+                  "Channels": [ 125, 0, 62, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
+                },
+                {
+                  "Duration": 3000, //the duration as a Long in miliSeconds
+                  "Channels": [ 0, 0, 255, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
+                },
+               ]
+            },
+            {
+              "NodeId": 452, //The id in Integer of the DMX light to change
+              "Command": [ //The list of commands to follow, in order
+                {
+                  "Duration": 2000, //the duration as a Long in miliSeconds
+                  "Channels": [ 125, 0, 62, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
+                },
+                {
+                  "Duration": 3000, //the duration as a Long in miliSeconds
+                  "Channels": [ 0, 0, 255, 214 ], //A table containing, for each channel of the fixture, a 0-255 DMX int value
+                },
+               ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  
 }
 
+//In the Master Node we need to map the nodeID to 
+HashMap[NodeID] = socket
 
-//Message If user wants to create new fixture
+//In each node there is info about his own node
 {
-  "Version": 1.3, // the system version for verification
-  "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
-  "SessionId": 486316, // the connection session Id for verification
-  "Data": {
-    "Type": "Terminate", // Must be "Function", "Command", "Function Creation", "Terminate", "Environment Creation" or "Fixture Creation"
-  }
+  "Version": 1.3,
+  "SessionID": 4586,
+  "NodeId": 1457
 }
+

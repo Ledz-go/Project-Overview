@@ -2,14 +2,16 @@
 
 {
   "Version": 1.3, //The version of the system
+  "SessionID": 1546, //The ID of the session
   "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
   "Command": [0,210,64,36] //The set of 255 byte values defining each DMX channel value
 }
 
 
-//This defines the messages going from Node to Master
-
+//Discovery message 
 {
-  "Type": "ACK" // or "Error"
+  "Version": 1.3, //The version of the system
+  "SessionID": 1546, //The ID of the session
+  "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
+  "Command": "Discovery" //indicates that the master wants to know who he is
 }
-                                      
