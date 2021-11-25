@@ -1,6 +1,16 @@
 # Project-Overview
 The architectural and logical overview for the LEDZ GO project
 
+## User Interaction
+The user will interact in the following way with the system:
+- Choose between the different saved scenarios
+- In a scenario:
+  - Choose the mood (automatic function)
+  - Issue a direct command to a light
+  - Create new mood
+  - Set up scenario
+- Create new scenario
+
 ## General Architecture
 The image bellow describes the general architecture for the project. We can distinguish 3 different agents in the project :
 - **Smartphone** : Containing the application the user will interact with
@@ -27,6 +37,7 @@ The project is divided into 4 parrallel workflow :
   - Master Node dispatch
   - Master Node *"DMX Light Automatic Function Mode"* handler
   - Network maintenance messages
+  - Interrogation du Réseau
 - Smartphone App Frontend
   - User interface in the smartphone
   - Opens Bluetooth connection with Smartphone
@@ -34,3 +45,12 @@ The project is divided into 4 parrallel workflow :
 - DMX Node Communication
   - Parses the input data
   - Translate it into approriate DMX signal
+ 
+  
+## Application Layer Functionalities
+
+#### Smartphone
+- 
+
+
+
