@@ -47,10 +47,10 @@ The project is divided into 4 parrallel workflow :
   - Translate it into approriate DMX signal
  
   
-## Application Layer Functionalities
+## Master Node
 
-#### Smartphone
-- 
+#### Finite State Machine
+![Master State Machine](https://github.com/Ledz-go/Project-Overview/blob/main/images/MasterNodeStateMachine.png)
 
 
 
