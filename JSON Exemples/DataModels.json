@@ -74,6 +74,8 @@
   
 }
 
+//An API trnasforms functions description into a function duration
+
 //In the Master Node we need to map the nodeID to 
 HashMap[NodeID] = socket
 

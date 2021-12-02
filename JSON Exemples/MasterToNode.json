@@ -18,3 +18,13 @@
   "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
   "Data": { "Type":"Discovery" } //indicates that the master wants to know who he is
 }
+//ANSWER for the discovery message
+{
+  "Version": 1.3, //The version of the system
+  "SessionID": 1546, //The ID of the session
+  "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
+  "Data": { 
+    "Type":"Discovery Answer",
+    "NodeId": 4521
+  } 
+}
