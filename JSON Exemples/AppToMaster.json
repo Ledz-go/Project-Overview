@@ -1,5 +1,6 @@
 //This is the different JSON messages transmitted from the Smartphone to the Master Node
 
+/*
 //Message If user presses a Automatic Function option. The app will also send the function dexcription with that
 {
   "Version": 1.3, // the system version for verification
@@ -8,6 +9,45 @@
   "Data": {
     "Type": "Function", // Must be "Function", "Command", "Terminate",  or "Fixture Creation"
     "Name": "Jazz Ambiance", //The name of the function as chosen by the User
+  }
+}
+*/
+
+//Message If user presses a Automatic Function option. The app will also send the function dexcription with that
+{
+  "Version": 1.3, // the system version for verification
+  "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
+  "SessionId": 486316, // the connection session Id for verification
+  "Data": {
+    "Type": "Function", // Must be "Function", "Command", "Terminate",  or "Fixture Creation"
+    "Sequence": [
+      { 
+        "Time": 0,
+        "Commands": [
+          {
+            "NodeId": 245,
+            "Command": [0,125,358,9,156,15] 
+          },
+          {
+            "NodeId": 25,
+            "Command": [0,125,358,4] 
+          }
+        ]
+      },
+      { 
+        "Time": 4,
+        "Commands": [
+          {
+            "NodeId": 245,
+            "Command": [0,125,358,9,156,15] 
+          },
+          {
+            "NodeId": 25,
+            "Command": [0,125,358,4] 
+          }
+        ]
+      }
+    ]
   }
 }
 
@@ -23,7 +63,7 @@
   }
 }
 
-//Message if user wants to create a new automatic function
+//Message if user wants to create a new automatic function. NOT SENT TO MASTER
 {
   "Version": 1.3, // the system version for verification
   "Timestamp": "2012-04-23T18:25:43.511Z", //JSON date format as conformed to ISO 8601
